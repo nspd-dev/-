@@ -1,8 +1,7 @@
 const messages = [
-    "Welcome to my profile! 🎀",
-    "This song is so tuff 🔥",
-    "Check out my TikTok, I'm probably live rn 📱",
-    "Let's play Roblox? 🎮"
+    "Welcome to my profile!",
+    "Check out my TikTok, I'm probably live rn",
+    "Let's play Roblox?"
 ];
 
 const infoElement = document.querySelector(".info");
