@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #ffdde1);
+  background-size: 400% 400%;
+  animation: bgFlow 5s infinite alternate ease-in-out;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+@keyframes bgFlow {
+  0% { background-position: left top; }
+  100% { background-position: right bottom; }
+}
+
+.profile-container {
+  background: rgba(255, 255, 255, 0.9);
+  width: 450px;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(255, 20, 147, 0.5);
+  text-align: center;
+  animation: fadeInUp 1s ease-out, glowPulse 2s infinite alternate;
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 10px rgba(255, 20, 147, 0.5); }
+  100% { box-shadow: 0 0 20px rgba(255, 20, 147, 0.8); }
+}
+
+.banner {
+  width: 100%;
+  height: 120px;
+  background: url('banner.gif') center/cover;
+  border-radius: 10px;
+  animation: bannerBounce 3s infinite alternate ease-in-out;
+}
+
+@keyframes bannerBounce {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.02); }
+}
+
+.profile-pic {
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  margin-top: -60px;
+  border: 5px solid white;
+  box-shadow: 0 0 15px rgba(255, 20, 147, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: bounceIn 1s ease-out, glowFloat 2s infinite alternate ease-in-out;
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  60% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+@keyframes glowFloat {
+  0% { box-shadow: 0 0 10px rgba(255, 20, 147, 0.5); transform: translateY(0); }
+  100% { box-shadow: 0 0 20px rgba(255, 20, 147, 0.8); transform: translateY(-3px); }
+}
+
+.profile-pic:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px hotpink;
+}
+
+h2 {
+  font-size: 32px;
+  color: #e91e63;
+  text-shadow: 2px 2px 8px rgba(233, 30, 99, 0.4);
+  animation: textGlow 3s infinite alternate ease-in-out;
+}
+
+@keyframes textGlow {
+  0% { color: #e91e63; text-shadow: 2px 2px 8px rgba(233, 30, 99, 0.4); }
+  100% { color: hotpink; text-shadow: 2px 2px 15px rgba(255, 20, 147, 0.8); }
+}
+
+.audio-controls {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 80%;
+  height: 10px;
+  border-radius: 5px;
+  background: linear-gradient(90deg, #ff69b4, #ff1493);
+  cursor: pointer;
+  animation: glowingBar 2s infinite alternate;
+}
+
+@keyframes glowingBar {
+  0% { box-shadow: 0 0 5px pink; }
+  100% { box-shadow: 0 0 15px hotpink; }
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 20, 147, 0.5);
+  transition: 0.3s;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.links {
+  margin-top: 20px;
+}
+
+.links a {
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px 15px;
+  background: hotpink;
+  color: white;
+  border-radius: 8px;
+  margin: 5px;
+  display: inline-block;
+  transition: transform 0.3s, background 0.3s;
+  animation: linkGlow 2s infinite alternate ease-in-out;
+}
+
+@keyframes linkGlow {
+  0% { box-shadow: 0 0 5px pink; }
+  100% { box-shadow: 0 0 15px hotpink; }
+}
+
+.links a:hover {
+  background: #ff1493;
+  transform: scale(1.1);
+}
+
+.links a:nth-child(1) { animation: floatUp 2s infinite alternate ease-in-out; }
+.links a:nth-child(2) { animation: floatUp 2.5s infinite alternate ease-in-out; }
+.links a:nth-child(3) { animation: floatUp 3s infinite alternate ease-in-out; }
+
+@keyframes floatUp {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-5px); }
+}
