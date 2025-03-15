@@ -7,6 +7,7 @@ const messages = [
 const infoElement = document.querySelector(".info");
 const audio = document.getElementById("audio");
 const volumeSlider = document.getElementById("volumeSlider");
+const profileContainer = document.querySelector(".profile-container");
 
 let messageIndex = 0;
 let charIndex = 0;
@@ -45,4 +46,15 @@ function typeEffect() {
 
 document.addEventListener("DOMContentLoaded", () => {
     setTimeout(typeEffect, 1000);
+});
+
+// Hover effect: Moves the profile slightly in the direction of the cursor
+document.addEventListener("mousemove", (e) => {
+    const { clientX: x, clientY: y } = e;
+    const { innerWidth: width, innerHeight: height } = window;
+
+    const moveX = (x / width - 0.5) * 15; 
+    const moveY = (y / height - 0.5) * 15; 
+
+    profileContainer.style.transform = `translate(${moveX}px, ${moveY}px)`;
 });
