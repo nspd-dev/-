@@ -1,17 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap');
 
 body {
-  font-family: 'Cinzel', serif;
-  background: linear-gradient(-45deg, #0c0c0c, #1a1a1a, #252525);
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(-45deg, #0b0b0b, #121212, #1a1a1a);
   background-size: 400% 400%;
   animation: bgFlow 5s infinite alternate ease-in-out;
-  color: #c4c4c4;
+  color: #d4d4d4;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  flex-direction: column;
 }
 
 @keyframes bgFlow {
@@ -19,18 +20,36 @@ body {
   100% { background-position: right bottom; }
 }
 
+#intro-screen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Profile Container */
 .profile-container {
-  background: rgba(20, 20, 20, 0.9);
+  background: rgba(15, 15, 15, 0.95);
   width: 450px;
   padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 0 30px rgba(100, 0, 0, 0.5);
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
   text-align: center;
   animation: fadeInUp 1s ease-out;
   position: relative;
-  backdrop-filter: blur(10px);
-  border: 2px solid #5c0e0e;
+  backdrop-filter: blur(12px);
+  border: 2px solid #444;
   transition: transform 0.1s ease-out;
+  display: none;
 }
 
 @keyframes fadeInUp {
@@ -50,21 +69,21 @@ body {
   height: 125px;
   border-radius: 50%;
   margin-top: -60px;
-  border: 3px solid #5c0e0e;
-  box-shadow: 0 0 15px rgba(100, 0, 0, 0.7);
+  border: 3px solid #444;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .profile-pic:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 25px rgba(100, 0, 0, 0.9);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
 }
 
 h2 {
-  font-size: 36px;
-  font-family: 'Old English Text MT', serif;
-  color: #a30f0f;
-  text-shadow: 2px 2px 10px rgba(150, 0, 0, 0.7);
+  font-size: 30px;
+  font-weight: bold;
+  color: #ddd;
+  text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.1);
 }
 
 .audio-controls {
@@ -78,20 +97,10 @@ h2 {
 input[type="range"] {
   -webkit-appearance: none;
   width: 80%;
-  height: 10px;
+  height: 8px;
   border-radius: 5px;
-  background: linear-gradient(90deg, #800000, #5c0e0e);
+  background: linear-gradient(90deg, #333, #666);
   cursor: pointer;
-}
-
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 18px;
-  height: 18px;
-  background: #a30f0f;
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgba(100, 0, 0, 0.7);
-  transition: 0.3s;
 }
 
 .links {
@@ -102,16 +111,16 @@ input[type="range"]::-webkit-slider-thumb {
   text-decoration: none;
   font-size: 18px;
   padding: 8px 15px;
-  background: #5c0e0e;
-  color: #c4c4c4;
+  background: #222;
+  color: #d4d4d4;
   border-radius: 8px;
   margin: 5px;
   display: inline-block;
   transition: transform 0.3s, background 0.3s;
-  box-shadow: 0 0 10px rgba(100, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 .links a:hover {
-  background: #800000;
+  background: #444;
   transform: scale(1.1);
 }
