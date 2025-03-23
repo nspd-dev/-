@@ -14,7 +14,13 @@ let charIndex = 0;
 let isDeleting = false;
 
 audio.volume = 0.5;
-audio.play().catch(error => console.log("Autoplay prevented:", error));
+
+function playAudio() {
+    audio.play().catch(error => console.log("Autoplay prevented:", error));
+    document.removeEventListener("click", playAudio);
+}
+
+document.addEventListener("click", playAudio);
 
 volumeSlider.addEventListener("input", () => {
     audio.volume = volumeSlider.value;
